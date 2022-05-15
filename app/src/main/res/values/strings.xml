@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">MyUiDeclarativeBasic</string>
+    <string name="title_activity_claim_activiy">ClaimActiviy</string>
+    <string name="action_submit">submit</string>
+    <string name="screen_cliam_form">Cliam Form</string>
 </resources>

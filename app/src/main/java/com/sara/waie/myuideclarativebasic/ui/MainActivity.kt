@@ -1,4 +1,4 @@
-package com.sara.waie.myuideclarativebasic
+package com.sara.waie.myuideclarativebasic.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,9 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.sara.waie.myuideclarativebasic.ui.theme.MyUiDeclarativeBasicTheme
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
