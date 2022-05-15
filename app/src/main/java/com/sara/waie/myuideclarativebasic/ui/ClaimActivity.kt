@@ -84,17 +84,14 @@ class ClaimActivity : ComponentActivity(), LifecycleOwner {
                         },
                         navigationIcon = {
                             IconButton(onClick = {
-
+                                onBackPressed()
                             }) {
                                 Icon(Icons.Filled.ArrowBack, getString(R.string.con_des_back))
                             }
                         },
                         actions = {
                             TextButton(onClick = {
-                                Log.d(TAG, " onButton Click ")
-//                                if (mViewModel.claimFormState.validate()) {
                                 if (mViewModel.submitForm()) {
-                                    Log.d(TAG, " mViewModel.submitForm() sssssssssss")
                                     coroutineScope.launch {
 
                                         val snackbarResult =
@@ -114,7 +111,6 @@ class ClaimActivity : ComponentActivity(), LifecycleOwner {
                                     }
 
                                 }
-//                                }
                             }) {
                                 Text(
                                     text = stringResource(id = R.string.action_submit).uppercase(

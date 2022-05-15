@@ -8,12 +8,8 @@ import androidx.lifecycle.*
 import com.sara.waie.myuideclarativebasic.data.AppRepository
 import com.sara.waie.myuideclarativebasic.model.Claim
 import com.sara.waie.myuideclarativebasic.model.ClaimFormResponse
-import com.sara.waie.myuideclarativebasic.model.Claimtype
-import com.sara.waie.myuideclarativebasic.utils.FileUtil
 import com.sara.waie.myuideclarativebasic.utils.FormState
-import com.sara.waie.myuideclarativebasic.utils.TextFieldState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -45,9 +41,8 @@ class ClainActivityViewmodel @Inject constructor(application: Application,privat
     }
 
     fun submitForm() :Boolean{
-        Log.d("ClaimActivity","Form Submited")
-        Log.d("ClaimActivity","isValid:"+claimFormState.validate())
-        Log.d("ClaimActivity",claimFormState.getData().toString())
+//        Log.d("ClaimActivity","isValid:"+claimFormState.validate())
+//        Log.d("Data to submit",claimFormState.getData().toString())
        return (claimFormState.validate())
     }
 }
