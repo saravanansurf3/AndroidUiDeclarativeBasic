@@ -12,6 +12,6 @@ data class Claimfield(
     @SerializedName("isdependant") var isdependant: String? = null,
     @SerializedName("created") var created: String? = null,
     @SerializedName("modified") var modified: String? = null,
-    @SerializedName("Claimfieldoption") var Claimfieldoption: ArrayList<Claimfieldoption> = arrayListOf()
+    @SerializedName("Claimfieldoption") var claimfieldoptions: ArrayList<Claimfieldoption> = arrayListOf()
 
 )

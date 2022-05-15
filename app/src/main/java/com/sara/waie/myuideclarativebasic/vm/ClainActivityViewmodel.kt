@@ -1,11 +1,17 @@
 package com.sara.waie.myuideclarativebasic.vm
 
 import android.app.Application
+import android.util.Log
 import androidx.compose.runtime.Composer.Companion.Empty
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.*
 import com.sara.waie.myuideclarativebasic.data.AppRepository
+import com.sara.waie.myuideclarativebasic.model.Claim
 import com.sara.waie.myuideclarativebasic.model.ClaimFormResponse
+import com.sara.waie.myuideclarativebasic.model.Claimtype
 import com.sara.waie.myuideclarativebasic.utils.FileUtil
+import com.sara.waie.myuideclarativebasic.utils.FormState
+import com.sara.waie.myuideclarativebasic.utils.TextFieldState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.async
@@ -21,6 +27,13 @@ class ClainActivityViewmodel @Inject constructor(application: Application,privat
     val uiState: StateFlow<ClaimFormResponse> = _uiState
 
 
+    public val _claimTypeSelected = MutableStateFlow<Claim>(Claim())
+    val claimTypeSelected: StateFlow<Claim> = _claimTypeSelected
+
+
+    var claimFormState=FormState(HashMap())
+
+
     init {
         loadClaimForm()
     }
@@ -29,5 +42,12 @@ class ClainActivityViewmodel @Inject constructor(application: Application,privat
          viewModelScope.async {
              appRepository.getFormDataFromAsset(context)?.let {  _uiState.value= it}
          }
+    }
+
+    fun submitForm() :Boolean{
+        Log.d("ClaimActivity","Form Submited")
+        Log.d("ClaimActivity","isValid:"+claimFormState.validate())
+        Log.d("ClaimActivity",claimFormState.getData().toString())
+       return (claimFormState.validate())
     }
 }

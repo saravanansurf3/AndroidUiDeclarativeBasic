@@ -2,5 +2,10 @@
     <string name="app_name">MyUiDeclarativeBasic</string>
     <string name="title_activity_claim_activiy">ClaimActiviy</string>
     <string name="action_submit">submit</string>
-    <string name="screen_cliam_form">Cliam Form</string>
+    <string name="screen_claim_form">Claim Form</string>
+    <string name="select_claim_type">Select Claim Type</string>
+    <string name="con_des_back">Back</string>
+    <string name="form_submited_success_message">Your Claim form submited successfully.</string>
+    <string name="submit_new_form">New Claim Form</string>
+    <string name="end_of_the_form">**** END OF FORM***</string>
 </resources>

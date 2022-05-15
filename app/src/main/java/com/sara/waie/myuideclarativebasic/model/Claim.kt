@@ -6,6 +6,6 @@ import com.google.gson.annotations.SerializedName
 data class Claim(
 
     @SerializedName("Claimtype") var Claimtype: Claimtype? = Claimtype(),
-    @SerializedName("Claimtypedetail") var Claimtypedetail: ArrayList<Claimtypedetail> = arrayListOf()
+    @SerializedName("Claimtypedetail") var Claimtypedetails: ArrayList<Claimtypedetail> = arrayListOf()
 
 )
